@@ -1,0 +1,25 @@
+{
+  "type": "module",
+  "dependencies": {
+    "graphql-request": "^7.1.2",
+    "node-fetch": "^2.7.0",
+    "xlsx": "^0.18.5"
+  },
+  "name": "ardenebooking-1",
+  "version": "1.0.0",
+  "main": "generateToken.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/janamadhoun12/ardeneBooking.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/janamadhoun12/ardeneBooking/issues"
+  },
+  "homepage": "https://github.com/janamadhoun12/ardeneBooking#readme",
+  "description": ""
+}

@@ -2,7 +2,7 @@ import { GetAllBookings } from './getAllBookings.js';
 import { GenerateToken } from './generateToken.js';
 import fetch from 'node-fetch';
 import XLSX from 'xlsx';
-// import cron from 'node-cron';
+import cron from 'node-cron';
 
 const url = 'https://primefreight-development.betty.app/api/runtime/fba8c23dd1104240bfdb9a1b10ef6dbe';
 const prod_url = 'https://primefreight.betty.app/api/runtime/da93364a26fb4eeb9e56351ecec79abb';
@@ -219,10 +219,10 @@ async function main() {
     }
 }
 main();
-// Schedule the script to run every day at 9 AM EDT
-// cron.schedule('0 9 * * *', () => {
-//     main();
-// }, {
-//     scheduled: true,
-//     timezone: 'America/New_York'
-// });
+// Schedule the script to run every day at 8 AM EDT
+cron.schedule('0 8 * * *', () => {
+    main();
+}, {
+    scheduled: true,
+    timezone: 'America/New_York'
+});

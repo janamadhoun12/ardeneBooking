@@ -1,7 +1,9 @@
 {
   "type": "module",
   "dependencies": {
+    "express": "^5.1.0",
     "graphql-request": "^7.1.2",
+    "node-cron": "^4.0.7",
     "node-fetch": "^2.7.0",
     "xlsx": "^0.18.5"
   },

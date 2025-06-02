@@ -22,8 +22,12 @@ query ($gte: DateTime!, $lt: DateTime!) {
     allBooking(
       where: {
         createdAt: { gteq: $gte, lt: $lt }
-        customer: { companyName: { eq: "Ardene Holdings Inc" } }
-      }
+        _or: [
+        { customer: { companyName: { eq: "Ardene Holdings Inc" } } },
+        { customer: { companyName: { eq: "George Courey Inc" } } }
+      ],
+      forwarder: {companyName: { eq: "Power Logistics" } }
+    }
     ) {
       results {
         primeFreightRef
@@ -62,6 +66,7 @@ export class GetAllBookings {
         }));
 }
 }
+// export {GetAllBookings};
 
 // style numbers - 10 
 // update p

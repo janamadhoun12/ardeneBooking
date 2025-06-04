@@ -10,11 +10,7 @@ import { GenerateToken } from './generateToken.js';
 
 // Style numbers (adding SN to a given booking)
 
-
-
-
 // cbm 
-
 
 
 const query = gql`
@@ -22,11 +18,7 @@ query ($gte: DateTime!, $lt: DateTime!) {
     allBooking(
       where: {
         createdAt: { gteq: $gte, lt: $lt }
-        _or: [
-        { customer: { companyName: { eq: "Ardene Holdings Inc" } } },
-        { customer: { companyName: { eq: "George Courey Inc" } } }
-      ],
-      forwarder: {companyName: { eq: "Power Logistics" } }
+        forwarder: {companyName: { eq: "Power Logistics" } }
     }
     ) {
       results {
@@ -34,6 +26,7 @@ query ($gte: DateTime!, $lt: DateTime!) {
         createdAt
         customer { id companyName }
         packingList { name url }
+        pos { id }
       }
     }
   }
@@ -62,7 +55,8 @@ export class GetAllBookings {
           primeFreightRef: b.primeFreightRef,
           createdAt: b.createdAt,
           customer: b.customer,
-          packingList: b.packingList
+          packingList: b.packingList,
+          pos:b.pos
         }));
 }
 }
